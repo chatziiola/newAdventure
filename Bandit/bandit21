@@ -1,0 +1,25 @@
+Description:
+A program is running automatically at regular intervals from cron, the time-based job scheduler. Look in /etc/cron.d/ for the configuration and see what command is being executed.
+
+---
+
+Commands you may need to solve this level:
+cron, crontab, crontab(5)
+
+---
+
+Solution:
+# The description points us at /etc/cron.d directory (and so in fact does the manual)
+# using ls -l /etc/cron.d/ we gain knowledge of the existence of the bandit22 crontab(?)
+cat /etc/cron.d/cronjob_bandit22
+# At that point we see that a file named "cronjob_bandit22.sh" exists
+cat /usr/bin/cronjob_bandit22.sh
+# Due to the fact that it doesnt have any permissions we are able to see its function and thus the password (it is hidden there in plain text)
+# EDIT (before even completing the file):
+# The cron process changes the permissions and then writes the contents of bandit22 to a file in /tmp/. "Cat"ting the file gives us the password
+cat /tmp/t7O6lds9S0RqQh9aMcz6ShpAoZKF7fgv
+
+---
+
+Password:
+Yk7owGAcWjwMVRwrTesJEwB7WVOiILLI

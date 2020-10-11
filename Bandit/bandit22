@@ -1,0 +1,27 @@
+Description:
+A program is running automatically at regular intervals from cron, the time-based job scheduler. Look in /etc/cron.d/ for the configuration and see what command is being executed.
+
+NOTE: Looking at shell scripts written by other people is a very useful skill. The script for this level is intentionally made easy to read. If you are having problems understanding what it does, try executing it to see the debug information it prints.
+
+---
+
+Commands you may need to complete the level:
+cron, crontab, crontab(5) (use “man 5 crontab” to access this)
+
+---
+
+Solution:
+# Again, I searched the /etc/cron.d directory and found a file linked to bandit23
+cat /etc/cron.d/cronjob_bandit23
+# Lets us find a script cronjob_bandit23.sh
+cat /usr/bin/cronjob_bandit23.sh
+# We see that the program there is quite simple:
+# It saves the password of bandit23 user in a file that named as: the name of the user (whoami), encrypted with md5 (?todo), and then  "cut" to keep only the first "word" of it
+cat /tmp/$(echo I am user bandit23 | md5sum | cut -d ' ' -f 1)
+# However we encounter a problem : the file is empty
+# SOLUTION: you didnt include the "i am user" there
+
+---
+
+Password:
+jc1udXuA1tiHqjIsL8yaapX5XIAI6i0n

