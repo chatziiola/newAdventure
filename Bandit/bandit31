@@ -1,0 +1,19 @@
+Description:
+There is a git repository at ssh://bandit31-git@localhost/home/bandit31-git/repo. The password for the user bandit31-git is the same as for the user bandit31.
+
+Clone the repository and find the password for the next level.
+
+---
+
+Commands you may need to solve this level:
+git
+
+---
+
+Solution:
+https://www.youtube.com/watch?v=g7nWwyC3AJI
+
+---
+
+Password:
+56a9bf19c63d650ce78e6ec0354ee45e
